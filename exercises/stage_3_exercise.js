@@ -2,7 +2,7 @@ import { menuItems, orders } from "../fakeData/foodTruckDB.js";
 
 // Stage 3: Finding one object with find()
 //
-// Run this file with:  node exercises/stage-3-exercise.js
+// Run this file with:  node exercises/stage_3_exercise.js
 // Each console.log below shows the expected output as a comment.
 // Implement the functions until all outputs match.
 //
@@ -18,7 +18,7 @@ import { menuItems, orders } from "../fakeData/foodTruckDB.js";
 // Expected output: { id: 2, name: "Double Engine", ... }
 
 function findMenuItemById(items, itemId) {
-  // TODO: your code here
+  return items.find(item => item.id === itemId);
 }
 
 console.log(findMenuItemById(menuItems, 2));
@@ -31,7 +31,7 @@ console.log(findMenuItemById(menuItems, 2));
 // Expected output: { id: 5, name: "Spicy Gear Burger", ... }
 
 function findMenuItemByName(items, itemName) {
-  // TODO: your code here
+  return items.find(item => item.name === itemName);
 }
 
 console.log(findMenuItemByName(menuItems, "Spicy Gear Burger"));
@@ -44,7 +44,7 @@ console.log(findMenuItemByName(menuItems, "Spicy Gear Burger"));
 // Expected output: { id: "ORD-002", customerName: "Somchai", status: "pending" }
 
 function findOrderById(orderList, orderId) {
-  // TODO: your code here
+  return orderList.find(order => order.id === orderId);
 }
 
 console.log(findOrderById(orders, "ORD-002"));
@@ -61,7 +61,7 @@ console.log(findOrderById(orders, "ORD-002"));
 //   getMenuItemNameById(menuItems, 99) → "Menu item not found"
 
 function getMenuItemNameById(items, itemId) {
-  // TODO: your code here
+  return items.find(item => item.id === itemId)?.name || "Menu item not found";
 }
 
 console.log(getMenuItemNameById(menuItems, 2));
